@@ -1,0 +1,48 @@
+{
+  "list": {
+    "title": "Tool List",
+    "description": "List of tools provided by AIGENDRUG."
+  },
+  "session": {
+    "title": "Tool Session",
+    "description": "Check the execution status and result of the tool."
+  },
+  "tool-input": {
+    "title": "Tool Input",
+    "run-model": "Run Model"
+  },
+  "tool-output": {
+    "title": "Tool Result",
+    "error": "Invalid output"
+  },
+  "no-items": "No items",
+  "no-items-description": "There are no items to display",
+  "upload-json": "Upload JSON",
+  "permission-level": {
+    "write": "Write",
+    "write-description": "You can execute and see the result of the tool",
+    "read": "Read",
+    "read-description": "You can see the tool and its result, but you can't execute it",
+    "none": "None",
+    "none-description": "You can't see the tool and its result"
+  },
+  "table": {
+    "title": "Tools",
+    "add-item": "Add Tool",
+    "delete": "Delete",
+    "column": {
+      "name": "Name",
+      "status": "Status",
+      "version": "Version",
+      "tool-id": "Tool ID",
+      "tool-uuid": "Tool UUID",
+      "permission-level": "Permission Level",
+      "created-at": "Created At"
+    },
+    "actions": {
+      "open-menu": "Open Menu",
+      "copy-tool-id": "Copy Tool ID",
+      "delete-session": "Delete Session"
+    }
+  }
+}

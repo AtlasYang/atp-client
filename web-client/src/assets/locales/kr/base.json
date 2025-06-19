@@ -1,0 +1,16 @@
+{
+  "ok": "확인",
+  "cancel": "취소",
+  "delete": "삭제",
+  "create": "생성",
+  "update": "수정",
+  "save": "저장",
+  "close": "닫기",
+  "copied-to-clipboard": "클립보드에 복사됨",
+  "navigation-panel": {
+    "dashboard": "대시보드",
+    "tool-session": "활성 도구 세션",
+    "tool-list": "도구 목록",
+    "welcome": "환영합니다"
+  }
+}

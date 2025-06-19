@@ -1,0 +1,175 @@
+@use "@cloudscape-design/design-tokens/index" as awsui;
+
+.spacer {
+  flex: 1;
+}
+
+.chat_fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 56px;
+  height: 56px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 40;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s;
+}
+
+.chat_fab.tilt {
+  transform: rotate(-135deg);
+}
+
+.chat_fab:hover {
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.chat_widget {
+  display: flex;
+  position: fixed;
+  bottom: 86px;
+  right: 20px;
+  z-index: 42;
+  width: 380px;
+  height: 620px;
+  max-width: 90vw;
+  max-height: calc(90vh - 86px);
+  border: 1px solid awsui.$color-border-divider-default;
+  border-radius: 16px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.chat_widget.full {
+  max-width: 100%;
+  width: 100%;
+  max-height: 100%;
+  height: calc(100% - 56px);
+  bottom: 0;
+  right: 0;
+  border-radius: 0;
+}
+
+.chat_widget .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-bottom: 1px solid awsui.$color-border-divider-default;
+}
+
+.chat_widget .header .img_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: white;
+}
+
+.chat_widget .header .title {
+  font-size: 18px;
+  font-weight: 600;
+  color: awsui.$color-text-body-default;
+}
+
+.chat_widget .header .subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  color: awsui.$color-text-body-secondary;
+}
+
+.chat_room_list {
+  display: flex;
+  width: 100%;
+  height: calc(100% - 56px);
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.chat_room_list .loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 8px;
+}
+
+.chat_room {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  gap: 12px;
+  background-color: #ffffff;
+  transition: background-color 0.3s;
+
+  cursor: pointer;
+}
+
+.chat_room:hover {
+  background-color: #f9f9f9;
+}
+
+.chat_room .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  max-width: calc(90% - 96px);
+  white-space: nowrap;
+  text-wrap: ellipsis;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.chat_room .actions {
+  opacity: 0;
+}
+
+.chat_room:hover .actions {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.chat_room h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: awsui.$color-text-body-default;
+}
+
+.chat_room p {
+  font-size: 12px;
+  font-weight: 300;
+  color: awsui.$color-text-body-secondary;
+}
+
+.chat_ui_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 53px;
+  padding: 8px 12px;
+  border-bottom: 1px solid awsui.$color-border-divider-default;
+}
+
+.chat_ui_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100% - 53px);
+  background-color: rgb(255, 255, 255);
+}

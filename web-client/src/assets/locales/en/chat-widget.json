@@ -1,0 +1,13 @@
+{
+  "title": "Session",
+  "subtitle": "We recommend the most suitable tool. If you have any questions, please ask.",
+  "new-chat": "Start new session",
+  "no-chat-rooms": "No sessions. Start a new session.",
+  "placeholder": "Enter your message",
+  "input-new-chat-name": "Enter a new session name",
+  "delete-chat": "Delete session",
+  "delete-chat-confirm": "Are you sure you want to delete this session? This action cannot be undone.",
+  "chat-ui": {
+    "input-placeholder": "Send a message"
+  }
+}

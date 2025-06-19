@@ -1,0 +1,28 @@
+{
+  "title": "Dashboard",
+  "statistics": {
+    "title": "Statistics",
+    "sessions": "Sessions",
+    "active-tool-sessions": "Active Tool Sessions",
+    "active-tools": "Active Tools"
+  },
+  "loading": "Loading...",
+  "no-items": "No items",
+  "no-items-description": "There are no items to display",
+  "table": {
+    "title": "Active Sessions",
+    "add-item": "Add Session",
+    "delete": "Delete",
+    "column": {
+      "name": "Name",
+      "status": "Status",
+      "assigned-tool": "Assigned Tool",
+      "created-at": "Created At"
+    },
+    "actions": {
+      "open-menu": "Open Menu",
+      "copy-tool-id": "Copy Tool ID",
+      "delete-session": "Delete Session"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "ok": "OK",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "create": "Create",
+  "update": "Update",
+  "save": "Save",
+  "close": "Close",
+  "copied-to-clipboard": "Copied to clipboard",
+  "navigation-panel": {
+    "dashboard": "Dashboard",
+    "tool-session": "Tool Session",
+    "tool-list": "Tool List",
+    "welcome": "Welcome"
+  }
+}

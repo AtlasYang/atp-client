@@ -1,0 +1,28 @@
+{
+  "title": "대시보드",
+  "statistics": {
+    "title": "통계",
+    "sessions": "세션",
+    "active-tool-sessions": "활성 툴 세션",
+    "active-tools": "활성 툴"
+  },
+  "loading": "로딩 중...",
+  "no-items": "항목 없음",
+  "no-items-description": "표시할 항목이 없습니다",
+  "table": {
+    "title": "활성 세션",
+    "add-item": "세션 추가",
+    "delete": "삭제",
+    "column": {
+      "name": "이름",
+      "status": "상태",
+      "assigned-tool": "할당된 툴",
+      "created-at": "생성일"
+    },
+    "actions": {
+      "open-menu": "메뉴 열기",
+      "copy-tool-id": "툴 ID 복사",
+      "delete-session": "세션 삭제"
+    }
+  }
+}

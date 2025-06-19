@@ -1,0 +1,15 @@
+@use "@cloudscape-design/design-tokens/index" as awsui;
+
+.tool_container {
+  border: 1px solid awsui.$color-border-divider-default;
+  border-radius: awsui.$border-radius-container;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tool_output_title {
+  font-size: awsui.$font-size-heading-s;
+  font-weight: awsui.$font-weight-heading-l;
+}
