@@ -24,6 +24,7 @@ type ToolService interface {
 	ReadAllToolRequests(rctx context.Context) ([]*toolrouter.ReadToolRequestDTOAlt, error)
 	ExecuteTool(rctx context.Context, toolID int, request []toolrouter.ToolInteractionElement) (*toolrouter.ToolExecutionResponseDTO, error)
 
+	// deprecated
 	ReadAllTools(rctx context.Context) ([]*Tool, error)
 	ReadTool(rctx context.Context, id uuid.UUID) (*Tool, error)
 	CreateTool(rctx context.Context, dto *CreateToolDTO) error
@@ -223,7 +224,6 @@ func (s *toolService) CreateToolMessage(rctx context.Context, dto *CreateToolMes
 }
 
 func (s *toolService) SendRequestToToolServer(rctx context.Context, toolID uuid.UUID, requestBody []toolrouter.ToolInteractionElement) (string, error) {
-	//modify user RequestBody [{interface_id: "number1", content: "10"}, {interface_id: "number2", content: "20"}, {interface_id: "operation", content: "+"}]
 	tool, err := s.ReadTool(rctx, toolID)
 	if err != nil {
 		return "", fmt.Errorf("failed to read tool: %w", err)

@@ -19,6 +19,7 @@ CREATE TABLE chat_messages (
     CONSTRAINT fk_session FOREIGN KEY (session_id) REFERENCES sessions(id) ON DELETE CASCADE
 );
 
+-- deprecated
 -- CREATE TABLE tools (
 --     id UUID PRIMARY KEY,
 --     name TEXT,
@@ -28,6 +29,7 @@ CREATE TABLE chat_messages (
 --     created_at TIMESTAMP
 -- );
 
+-- deprecated
 -- CREATE TABLE tool_messages (
 --     id UUID PRIMARY KEY,
 --     session_id UUID NOT NULL,

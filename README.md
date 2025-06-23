@@ -1,6 +1,6 @@
 # ATP-Client
 
-AIGENDRUG Tool Platform, Client Application
+AIGENDRUG Tool Platform Client Application
 
 ## Authors
 
@@ -12,48 +12,70 @@ Group A:
 - Khinwaiyan - [khinwaiyan](https://github.com/khinwaiyan)
 - Kim Da In - [dida0423](https://github.com/dida0423)
 
+---
+
 ## Introduction
 
-**ATP-Client** is the comprehensive user-facing application of the **AIGENDRUG Tool Platform**, providing an intuitive interface for intelligent tool discovery, interactive chat-based assistance, and seamless tool execution management. This client application connects to ATP-Central to deliver AI-powered tool selection and execution capabilities through a modern, responsive web interface.
+**ATP-Client** is the comprehensive user-facing application of the **AIGENDRUG Tool Platform**, providing an intuitive interface for tool discovery, interactive chat-based assistance, and smooth tool execution. This client application connects to ATP-Central to deliver AI-powered tool selection and execution capabilities through a modern, responsive web interface.
 
-The platform enables users to engage with computational tools through natural language conversations, automatically matching user intents with appropriate tools, and providing real-time execution feedback. ATP-Client serves as the primary gateway for end-users to access the AIGENDRUG ecosystem's computational resources.
+The platform enables users to interact with computational tools using natural language, automatically matching user intents with appropriate tools and providing real-time execution.
 
-### Key Features
+---
 
-- **Intelligent Chat Interface**: Natural language interaction with AI-powered tool selection and execution
-- **Real-time WebSocket Communication**: Live bidirectional communication for chat and tool execution updates
-- **Multi-Session Management**: Concurrent session handling with persistent conversation history
-- **Interactive Tool Registration**: Dynamic tool registration and configuration interface
-- **Responsive Design**: Modern React-based UI with mobile-first responsive design
-- **Multi-language Support**: Internationalization support with Korean and English locales
-- **Tool Execution Monitoring**: Real-time tool execution status and result visualization
+## Table of Contents
 
-### Architecture Overview
+1. [Key Features](#key-features)
+2. [Architecture Overview](#architecture-overview)
+3. [Technology Stack](#technology-stack)
+4. [Getting Started](#getting-started)
+5. [Navigating the Application](#navigating-the-application)
+6. [Troubleshooting](#troubleshooting)
+7. [Support](#support)
 
-ATP-Client follows a modern full-stack architecture with clear separation between frontend and backend concerns:
+---
 
-#### Server (Go/Gin)
-A high-performance HTTP server built with Go and Gin framework, providing RESTful APIs and WebSocket services:
+## Key Features
+
+- **Intelligent Chat Interface** – AI-powered tool selection and execution via natural language
+- **Real-time WebSocket Communication** – Live updates for chat and tool outputs
+- **Multi-Session Management** – Persistent conversation history across sessions
+- **Dynamic Tool Registration** – Register and configure tools interactively
+- **Responsive Design** – Mobile-first React + Tailwind UI
+- **Multi-language Support** – English and Korean support via `react-i18next`
+- **Tool Execution Monitoring** – Real-time tool execution tracking and visualization
+
+---
+
+## Architecture Overview
+
+### Server (Go/Gin)
+
+- Built with the Gin framework
+- RESTful API + WebSocket communication
+- PostgreSQL-based persistence
+- Integration with ATP-Central using secure API keys
 
 **Core Services:**
-- **Chat Service**: Manages conversation sessions, message persistence, and real-time chat functionality
-- **Tool Service**: Handles tool registration, CRUD operations, and tool execution coordination
-- **Session Management**: User session lifecycle management with secure authentication
-- **Tool Router Integration**: Seamless communication with ATP-Central for intelligent tool selection
+
+- Chat Service
+- Tool Service
+- Session Management
+- ATP-Central Communication
 
 **Key Capabilities:**
+
 - RESTful API endpoints for all client operations
 - WebSocket-based real-time chat and tool execution updates
 - Integration with ATP-Central via secure API key authentication
 - Session and message persistence using PostgreSQL
 
-#### Web Client (React/TypeScript)
-A modern, responsive single-page application built with React and TypeScript:
+### Web Client (React/TypeScript)
 
-**Core Components:**
-- **Dashboard**: Central hub for session management and tool overview
-- **Chat Interface**: Real-time conversational AI with message history
-- **Tool Output Visualization**: Rich display of tool execution results and status
+- Responsive SPA built with Vite + React
+- Component-driven design using Cloudscape and Tailwind
+- Chat, dashboard, and modal-driven tool execution flow
+
+---
 
 ## Technology Stack
 
@@ -67,11 +89,14 @@ A modern, responsive single-page application built with React and TypeScript:
 - **Internationalization**: [react-i18next](https://react.i18next.com/) - Multi-language support
 - **Containerization**: [Docker](https://www.docker.com/) - Application containerization
 
+---
+
 ## Getting Started
 
 ### Prerequisites
 
 For self-hosted deployment:
+
 - Docker and Docker Compose
 - Node.js 18+ with npm/yarn (for development)
 - Go 1.22+ (for development)
@@ -84,6 +109,7 @@ Before deployment, you'll need to configure environment variables:
 #### Required Environment Variables
 
 **Server Configuration:**
+
 - **ATP_ROUTER_HOST**: ATP-Central service endpoint
 - **ATP_ROUTER_API_KEY**: API key for ATP-Central authentication
 - **POSTGRES_PASSWORD**: Secure password for PostgreSQL database
@@ -92,6 +118,7 @@ Before deployment, you'll need to configure environment variables:
 - **RUN_MODE**: Environment mode (release for production, debug for development)
 
 **Client Configuration:**
+
 - **VITE_API_BASE_URL**: Backend API endpoint
 - **VITE_WS_URL**: WebSocket connection URL
 
@@ -104,10 +131,11 @@ All configuration options are documented in the `.env.example` file with placeho
 The self-hosted setup uses Docker Compose for simplified deployment:
 
 1. **Environment Configuration**
+
    ```bash
    # Copy environment template and configure your settings
    cp .env.example .env
-   
+
    # Edit the .env file with your actual values:
    # - Set ATP_ROUTER_HOST to your ATP-Central endpoint
    # - Add your ATP_ROUTER_API_KEY
@@ -131,9 +159,45 @@ For production cloud deployment:
 3. **Web Client**: Deploy to CDN or static hosting services
 4. **Load Balancing**: Configure load balancer for high availability
 
-## API Integration
+---
 
-ATP-Client integrates with ATP-Central through secure API endpoints for tool selection and execution coordination.
+## Navigating the Application
+
+**Dashboard**
+
+![](screenshots/dashboard.png)
+
+- This screen allows you to manage chat sessions and access to it.
+- Press FAB at bottom right corner to open chat panel.
+
+**Chat panel**
+
+<img width="334" alt="chat-panel" src="screenshots/chat-panel.png" />
+
+- Create new chat session and write any prompt to get tool recommendation.
+
+
+**Tool Request & Response Modal**
+
+<img width="480" alt="tool-request" src="screenshots/tool-request-modal.png" />
+<img width="480" alt="tool-response" src="screenshots/tool-response-modal.png" />
+
+- Tool request and response modal is automatically generated based on tool interface.
+- Results shown as text, tables, images, or downloadable links.
+
+**Tool List**
+
+![](screenshots/tool-list.png)
+
+- All tools that you can access based on permission.
+
+**Tool Session**
+
+![](screenshots/tool-session.png)
+
+- Press tool name to read the response of successful tool request.
+
+---
 
 ## Troubleshooting
 
@@ -146,8 +210,5 @@ ATP-Client integrates with ATP-Central through secure API endpoints for tool sel
 
 ## Support
 
-For questions, bug reports, or further assistance, contact:
-
-📧 [khinwaiyan@snu.ac.kr](mailto:khinwaiyan@snu.ac.kr)
-
-Environment variables and detailed configuration examples are provided in each component directory.
+📧 Contact: [khinwaiyan@snu.ac.kr](mailto:khinwaiyan@snu.ac.kr)  
+For bug reports or feature requests, open an issue on the GitHub repository.
